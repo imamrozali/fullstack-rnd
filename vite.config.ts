@@ -8,7 +8,6 @@ import react from "@vitejs/plugin-react-swc";
 import tailwindcss from "@tailwindcss/vite";
 import path from "path";
 
-import { pwaPlugin } from "./plugins/pwa";
 // https://vite.dev/config/
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd());
@@ -16,7 +15,7 @@ export default defineConfig(({ mode }) => {
 
   return {
     base: env.VITE_BASE_PATH || "/",
-    plugins: [react(), tailwindcss(), isProduction && pwaPlugin],
+    plugins: [react(), tailwindcss()],
     server: {
       port: Number(env.VITE_DEV_SERVER_PORT) || 3000,
       open: true,
@@ -37,7 +36,6 @@ export default defineConfig(({ mode }) => {
             react: ["react", "react-dom"],
             vendor: ["axios"],
             ui: ["framer-motion"],
-            pwa: ["vite-plugin-pwa"],
           },
           entryFileNames: isProduction
             ? "assets/js/[name]-[hash].js"

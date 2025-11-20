@@ -5,12 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "dev:staging": "vite --mode staging",
-    "dev:prod": "vite --mode production",
-    "build:development": "tsc -b && vite build --mode development",
-    "build:staging": "tsc -b && vite build --mode staging",
-    "build:prod": "tsc -b && vite build --mode production",
-    "build": "tsc -b && vite build --mode development",
+    "build": "tsc -b && vite build",
     "test": "TZ=UTC vitest run",
     "test:watch": "TZ=UTC vitest watch",
     "test:coverage": "TZ=UTC vitest run --coverage",
@@ -47,7 +42,6 @@
     "typescript": "~5.9.3",
     "typescript-eslint": "^8.46.3",
     "vite": "^7.2.2",
-    "vite-plugin-pwa": "^1.1.0",
     "vitest": "^4.0.10"
   }
 }
